@@ -33,3 +33,20 @@ rmse_test = MSE(y_test, y_pred)**(1/2)
 
 # Print the test set RMSE
 print('Test set RMSE of rf: {:.2f}'.format(rmse_test))
+
+# Feature Importance
+# Tree-based methods: enable measuring the importance of each feature in prediction.
+# In sklearn: 
+#   how much the tree nodes use a particular feature (weiighted average) to reduce impurity.
+#   accessed using the attribute feature_importance_
+
+import matplotlib.pyplot as plt
+
+# Create a pd.Series of features importance
+importances_rf = pd.Series(rf.feature_importances_, index=X.columns)
+
+# Sort importances_rf
+sorted_importances_rf = importances_rf.sort_values()
+
+# Make a horizontal bar plot
+sorted_importances_rf.plot(kind='barh', color='lightgreen'); plt.show()

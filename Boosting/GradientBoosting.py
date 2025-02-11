@@ -38,3 +38,8 @@ rmse_test = MSE(y_test, y_pred)**(1/2)
 
 # Print the test set RMSE
 print('Test set RMSE: {:.2f}'.format(rmse_test))
+
+# Gradient Boosting: Cons
+
+# GB involves an exhaustive search procedure.
+# Each CART is trained to find the best split points and features.

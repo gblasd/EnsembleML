@@ -1,7 +1,9 @@
 # Inspection the hyperparameters of a CART in sklearn
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import train_test_split
+import numpy as np
 
+# Set seed for reproductibility
 SEED = 1
 
 # Define the DataFrames
@@ -13,9 +15,6 @@ X_train, X_test, y_train, y_test = train_test_split(
     X, y,
     test_size=0.3,
     random_state=SEED)
-
-# Set seed to 1 for reproductibility
-SEED = 1
 
 # Instantiate a DecisionTreeClasifier 'dt'
 dt = DecisionTreeClassifier(random_state=SEED)
